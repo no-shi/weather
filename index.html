@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="shortcut icon" href="">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+</head>
+<body>
+
+<section class="weather">
+<div class="wrapper">
+  <div class="cntr">
+    <p class="ttl">RANDOM WEATHER<span class="txt">明日の天気予報を見てみましょう（天気画像をクリックしてください）</span></p>
+      <p id="txt_weather" class="ttl txt">明日はどうやら曇りのようです。</p>
+    <div class="tcenter">
+    </div>
+    <p class="mainimg"><img id="main_image" onclick="changeIMG();changeCLASS();changeText();" class="classcng float" src="images/sunny.png"></p>
+  </div>
+</div>
+
+</section>
+  
+<script>
+
+var img = new Array();
+img[0] = new Image();
+img[0].src = "images/cloudy.png";
+img[1] = new Image();
+img[1].src = "images/sunny.png";
+img[2] = new Image();
+img[2].src = "images/rainy.png";
+
+var cnt = 0;
+
+//画像切り替え確率関数
+function changeIMG(){
+var x = Math.random(); 
+if (0.6 <= x) {
+  cnt = 0;					 
+}
+else if(0.3 <= x){
+  cnt = 1;						 
+}
+else{
+  cnt = 2;
+} 
+  //画像を切り替える
+  document.getElementById("main_image").src=img[cnt].src;
+}
+
+function changeCLASS(){
+if(cnt === 1) {
+  document.getElementById('main_image').className='classcng';
+}
+else{
+  document.getElementById('main_image').className='classcng float';
+}
+};
+
+//天気テキスト切り替え
+function changeText(){
+  if(cnt === 0){
+    document.getElementById("txt_weather").innerHTML= "明日はどうやら曇りのようです。";
+  }
+  else if(cnt === 1){
+    document.getElementById("txt_weather").innerHTML= "明日はどうやら晴れのようです。";
+  }
+  else{
+    document.getElementById("txt_weather").innerHTML= "明日はどうやら雨のようです。";
+  }
+}
+</script>
+</body>
+</html>

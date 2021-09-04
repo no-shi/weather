@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+html{
+  width: 100%;
+}
+
+body{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img{ width: 100%;
+height: auto;}
+
+ul{ list-style: none;
+  
+}
+.tcenter{
+   text-align: center;
+}
+
+.wrapper{
+  width: 100%;
+}
+
+.cntr{
+  margin: 0 auto;
+  max-width: 980px;
+  height: auto;
+  display: block;
+}
+
+.cntr p{
+  text-align: center;
+}
+
+.ttl{
+  font-size: 40px;
+  font-family: 'Century Gothic', sans-serif;
+  color: darkslateblue;
+}
+
+.txt{
+  font-size: 16px;
+display: block;
+}
+
+.mainimg{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.weather ul{
+  margin: 1em; 
+  padding: 1em;
+}
+
+.weather ul li{
+display: inline-block;
+}
+
+.weather ul li:first-child{
+  margin-right: 20px;
+}
+
+.float { animation: float_685 4s linear infinite; transform-origin: 50% 50%; } @keyframes float_685 { 0% { transform: translateY(0) } 25% { transform: translateY(-6px) } 50% { transform: translateY(0) } 100% { transform: translateY(0) } }
